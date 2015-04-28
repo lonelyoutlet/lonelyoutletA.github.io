@@ -1,38 +1,37 @@
---- 
-2 layout: page 
-3 description: "A Clean Blog Theme by Start Bootstrap" 
-4 --- 
-5 
- 
-6 {% for post in paginator.posts %} 
-7 <div class="post-preview"> 
-8     <a href="{{ post.url | prepend: site.baseurl }}"> 
-9         <h2 class="post-title">            {{ post.title }} 
-10         </h2> 
-11         {% if post.subtitle %} 
-12         <h3 class="post-subtitle"> 
-13             {{ post.subtitle }} 
-14         </h3> 
-15         {% endif %} 
-16     </a> 
-17     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p> 
-18 </div> 
-19 <hr> 
-20 {% endfor %} 
-21 
- 
-22 <!-- Pager --> 
-23 {% if paginator.total_pages > 1 %} 
-24 <ul class="pager"> 
-25     {% if paginator.previous_page %} 
-26     <li class="previous"> 
-27         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a> 
-28     </li> 
-29     {% endif %} 
-30     {% if paginator.next_page %} 
-31     <li class="next"> 
-32         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a> 
-33     </li> 
-34     {% endif %} 
-35 </ul> 
-36 {% endif %} 
+---
+layout: page
+description: "A Clean Blog Theme by Start Bootstrap"
+---
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
+
